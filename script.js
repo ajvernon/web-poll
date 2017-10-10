@@ -6,7 +6,7 @@ window.onerror = function(msg, url, linenumber) {
 window.addEventListener("load", function (){
     function makeRequest(inputData) {
         let httpRequest = new XMLHttpRequest();
-        let dataToSend = new formData(inputData);
+        let dataToSend = new FormData(inputData);
     
         if (!httpRequest) {
             alert('Giving up :( Cannot create an XMLHTTP instance');
