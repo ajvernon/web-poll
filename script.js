@@ -3,17 +3,24 @@ window.onerror = function(msg, url, linenumber) {
     return true;
 }
 
-function request(){
-    var httpRequest;
-    function makeRequest() {
-        httpRequest = new XMLHttpRequest();
+window.addEventListener("load", function (){
+    function makeRequest(inputData) {
+        let httpRequest = new XMLHttpRequest();
+        let dataToSend = new formData(inputData);
     
         if (!httpRequest) {
             alert('Giving up :( Cannot create an XMLHTTP instance');
             return false;
         }
         httpRequest.onreadystatechange = alertContents;
-        httpRequest.open('GET', 'test.html');
-        httpRequest.send();
+        httpRequest.open('POST', "db.php");
+        httpRequest.send(dataToSend);
     }
-}
+
+    var form = document.getElementById("pollForm");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        makeRequest(form);
+    });
+
+});
