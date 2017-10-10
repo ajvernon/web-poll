@@ -12,7 +12,6 @@ window.addEventListener("load", function (){
             alert('Giving up :( Cannot create an XMLHTTP instance');
             return false;
         }
-        httpRequest.onreadystatechange = alertContents;
         httpRequest.open('POST', "db.php");
         httpRequest.send(dataToSend);
     }
