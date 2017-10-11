@@ -16,10 +16,8 @@ $latestId = 0;
 
 // I hate myself for doing this
 foreach ($stmt as $row){
-    print $row['id'] . "\n";
     $latestId = $row['id'];
 }
-print $latestId . "\n";
 $stmt = null;
 
 $tableQuery = 'CREATE TABLE `' . $latestId . '` (`choice` TEXT, `votes` INT);';
@@ -29,7 +27,6 @@ $stmt = null;
 
 foreach ($_POST as $key => $value) {
     if ($key === 'pollName'){
-        echo "Skipping poll name!";
     } else {
         $part1 = 'INSERT INTO `' . $latestId . '` (`choice`, `votes`)';
         $part2 = 'VALUES ("' . $value . '", 0);';
@@ -44,5 +41,5 @@ foreach ($_POST as $key => $value) {
 $stmt = null;
 $dbh = null;
 
-echo $latestID;
+echo $latestId;
 ?>

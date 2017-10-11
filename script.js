@@ -40,14 +40,14 @@ window.addEventListener("load", function (){
             alert('Giving up :( Cannot create an XMLHTTP instance');
             return false;
         }
-        httpRequest.open('POST', "poll-send.php");
+        httpRequest.open('POST', "./poll-send.php");
         httpRequest.send(dataToSend);
-        //httpRequest.onreadystatechange = function() {
-          //  if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-            //    console.log(this.responseText);
-                // window.location.replace("./poll.php?id=" + this.responseText);
-            //}
-        //};
+        httpRequest.onreadystatechange = function() {
+            if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+                console.log(this.responseText);
+                window.location.href = "./poll.php?id=" + this.responseText;
+            }
+        };
     }
 
     var form = document.getElementById("pollForm");
