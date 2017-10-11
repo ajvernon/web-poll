@@ -1,6 +1,6 @@
 /*
- * This function throws an error as an alert, instead of just silently
- * throwing it into the console.
+ * This function throws errors as alerts, instead of just silently
+ * throwing them into the console.
  */
 window.onerror = function(msg, url, linenumber) {
     alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
