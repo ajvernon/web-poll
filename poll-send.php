@@ -43,4 +43,6 @@ foreach ($_POST as $key => $value) {
 // Ends the database connection
 $stmt = null;
 $dbh = null;
+
+echo $latestID;
 ?>
