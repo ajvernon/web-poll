@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>A Web Poll!</title>
+    <title>haypoll - Create your own poll!</title>
     <meta charset="utf-8"  />
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body>
-    <h1> hullo! </h1>
-    <h2> here's our web poll site! </h2>
 
-    <form id="pollForm">
+<body>
+    <header class="header">
+	    <a id="logo" href="/"><img src="./images/pie-chart-small.png"/>haypoll</a>
+	</header>
+		<h1 id="pagetitle" class="center">Create your own poll in an instant.</h1>
+	
+	
+	<form id="pollForm">    
         <div>
-            <label for="name">Poll Name:</label>
+            <label for="name">Question:</label>
             <input type="text" id="name" name="pollName">
         </div>
         <div id="container">

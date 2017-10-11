@@ -1,0 +1,19 @@
+.header {
+	height: 20px;
+    position: fixed;
+	background-color: #FFF;
+	font-size: 50px;
+}
+
+.center {
+	text-align="center";
+	
+}
+
+#pagetitle {
+	padding-top: 120px;
+}
+
+#logo {
+	font-size: 20px;
+	
